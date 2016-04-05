@@ -31,7 +31,7 @@ function loadWeather(location, woeid) {
       html += '<li class="currently">'+weather.currently+'</li>';
       html += '<li>'+weather.alt.temp+'&deg;C</li></ul>'; 
 
-      for(var i=0;i<weather.forecast.length;i++) {
+      for(var i = 0; i < 5; ++i) {
              html += '<p>'+weather.forecast[i].date+': '+weather.forecast[i].high+'</p>';
            }
       
