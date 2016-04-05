@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'helvetica-light';
-  src: url('../fonts/HelveticaNeue-Light.otf') 
+  src: url('../font/HelveticaNeue-Light.otf') 
 }
 
 @font-face {
 	font-family: 'helvetica-bold';
-	src: url('../fonts/HelveticaNeue-Medium.otf');
+	src: url('../font/HelveticaNeue-Medium.otf');
 }
 
 html
@@ -28,4 +28,10 @@ h2
 	font-size: 34px;
 	font-family: "helvetica-bold", serif;
 
+}
+
+ul,p
+{
+	font-family: "helvetica-light", serif;
+	font-size: 20px;
 }
