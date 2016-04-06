@@ -1,10 +1,26 @@
-// Docs at http://simpleweatherjs.com
+var date = new Date();
 
 /* Does your browser support geolocation? */
 if ("geolocation" in navigator) {
   $('.js-geolocation').show(); 
 } else {
   $('.js-geolocation').hide();
+}
+
+function formatDate()
+{
+  var hours = date.getHours();
+  var min = date.getMinutes();
+  var ampm = "AM";
+  if(date.getHours() > 12){
+    hours -= 12;
+    ampm = "PM"
+  }
+  if(min < 10)
+    $('#time').append(hours + ':0' + min + ' ' + ampm);
+  else
+    $('#time').append(hours + ':' + min + ' ' + ampm);
+
 }
 
 /* 
@@ -16,6 +32,8 @@ $(document).ready(function() {
   navigator.geolocation.getCurrentPosition(function(position) {
     // loadWeather(position.coords.latitude+','+position.coords.longitude); //load weather using your lat/lng coordinates
   });
+
+  formatDate();
 });
 
 function loadWeather(location, woeid) {
