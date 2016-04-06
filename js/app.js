@@ -1,3 +1,5 @@
+var month = ['Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+
 /* Does your browser support geolocation? */
 if ("geolocation" in navigator) {
   $('.js-geolocation').show(); 
@@ -27,11 +29,6 @@ function formatDate()
 
 }
 
-/* 
-* Test Locations
-* Austin lat/long: 30.2676,-97.74298
-* Austin WOEID: 2357536
-*/
 $(document).ready(function() {
   navigator.geolocation.getCurrentPosition(function(position) {
     loadWeather(position.coords.latitude+','+position.coords.longitude); //load weather using your lat/lng coordinates
@@ -56,6 +53,16 @@ function loadWeather(location, woeid) {
       //      }
       // $('#location').append('<p>' + weather.city + ', ' + weather.region + '</p>');
       $(".weather-big").append('<i class="wi wi-yahoo-' + weather.code + '"></i>&nbsp' + weather.temp + '&deg');
+      for(var i = 1; i < 5; ++i){
+        var id = "#day-"+i;
+        var date = new Date();
+        console.log(date)
+        var html = '<div class="date-wrapper"><div class="date-info">' + month[date.getMonth()] + ' ' + (date.getDay() + 3 + i) + '</div>'
+            html += '<div class="date-info"><i class="wi wi-yahoo-' + weather.forecast[i-1].code + '"></i></div>'
+            html += '<div class="date-info">' + weather.forecast[i].high + '&deg/' + weather.forecast[i].low + '&deg</div></div>'
+
+        $(id).append(html);
+      }
     },
     error: function(error) {
       $("#weather").html('<p>'+error+'</p>');
