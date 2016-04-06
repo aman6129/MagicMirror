@@ -7,11 +7,20 @@
 	font-family: 'helvetica-bold';
 	src: url('../font/HelveticaNeue-Medium.otf');
 }
-
+body
+{
+	background-color: black;
+}
 html
 {
 	background-color: black;
 	color: white;
+
+	margin: 30px 20px 30px 20px;
+	padding: 0px;
+
+	width: 1280px;
+	height: 800px;
 }
 
 h1
@@ -25,7 +34,7 @@ h1
 h2
 {
 	color: white;
-	font-size: 34px;
+	font-size: 72px;
 	font-family: "helvetica-bold", serif;
 
 }
@@ -34,4 +43,101 @@ ul,p
 {
 	font-family: "helvetica-light", serif;
 	font-size: 20px;
+}
+
+#location
+{
+	font-family: "helvetica-light", serif;
+	color: white;
+	font-size: 43px;
+}
+
+#time
+{
+	font-family: "helvetica-bold", sans-serif;
+	color: white;
+	font-size: 83px;
+	margin-top: -10px;
+}
+
+#main-weather-wrapper
+{
+	width: 354px;
+	height: 265px;
+	margin-top: 25px;
+
+	display: block;
+	background-color: #F3C662;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+#day-1
+{
+	width: 354px;
+	height: 65px;
+
+	display: block;
+	background-color: #E7BA56;
+}
+
+#day-2
+{
+	width: 354px;
+	height: 65px;
+
+	display: block;
+	background-color: #D7AA45;
+}
+
+#day-3
+{
+	width: 354px;
+	height: 65px;
+
+	display: block;
+	background-color: #C89C39;
+}
+
+#day-4
+{
+	width: 354px;
+	height: 65px;
+
+	display: block;
+	background-color: #B18728;
+}
+
+.date-wrapper
+{
+	width: 100%;
+	line-height: 65px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.date-info
+{
+	display: inline-block;
+	width: 115px;
+	text-align: center;
+	height: 100%;
+	font-family: "helvetica-light", sans-serif;
+	font-size: 20px;
+}
+
+.weather-big
+{
+	font-family: "helvetica-bold", sans-serif;
+	text-align: center;
+	font-size: 93px;
+	padding-top: 45px;
+}
+
+.message
+{
+	font-family: "helvetica-light", sans-serif;
+	text-align: center;
+	padding-top: 20px;
+	font-size: 32px;
 }

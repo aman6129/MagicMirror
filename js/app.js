@@ -14,9 +14,7 @@ if ("geolocation" in navigator) {
 */
 $(document).ready(function() {
   navigator.geolocation.getCurrentPosition(function(position) {
-    console.log('click');
-    loadWeather(position.coords.latitude+','+position.coords.longitude); //load weather using your lat/lng coordinates
-    console.log(position.coords.latitude+','+position.coords.longitude);
+    // loadWeather(position.coords.latitude+','+position.coords.longitude); //load weather using your lat/lng coordinates
   });
 });
 
@@ -27,15 +25,15 @@ function loadWeather(location, woeid) {
     unit: 'f',
     success: function(weather) {
       console.log(weather.code);
-      html = '<h2><i class="wi wi-yahoo-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+      html = '<h2><i class="wi wi-yahoo-'+weather.code+'"></i> '+weather.temp+'&deg;</h2>';
       html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
       html += '<li class="currently">'+weather.currently+'</li>';
       html += '<li>'+weather.alt.temp+'&deg;C</li></ul>'; 
 
       for(var i = 0; i < 5; ++i) {
-             html += '<p>'+weather.forecast[i].date+': '+weather.forecast[i].high+'</p>';
+             html += '<p>'+weather.forecast[i].date+': '+weather.forecast[i].high+ '/' + weather.forecast[i].low + '</p>';
            }
-      
+      $('#location').append('<p>' + weather.city + ', ' + weather.region + '</p>');
       $("#weather").html(html);
     },
     error: function(error) {
