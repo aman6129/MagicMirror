@@ -122,7 +122,7 @@ function loadWeather(location, woeid) {
       for(var i = 1; i < 5; ++i){
         var id = "#day-"+i;
         var date = new Date();
-        var html = '<div class="date-wrapper"><div class="date-info">' + month[date.getMonth()] + ' ' + (date.getDay() + 3 + i) + '</div>'
+        var html = '<div class="date-wrapper"><div class="date-info">' + month[date.getMonth()] + ' ' + (date.getDate() + i) + '</div>'
             html += '<div class="date-info"><i class="wi wi-yahoo-' + weather.forecast[i-1].code + '"></i></div>'
             html += '<div class="date-info">' + weather.forecast[i-1].high + '&deg / ' + weather.forecast[i-1].low + '&deg</div></div>'
 
