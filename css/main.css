@@ -10,6 +10,7 @@
 body
 {
 	background-color: black;
+	color: white;
 }
 html
 {
@@ -19,8 +20,8 @@ html
 	margin: 30px 20px 30px 20px;
 	padding: 0px;
 
-	width: 1280px;
-	height: 800px;
+	width: 1260px;
+	height: 770px;
 }
 
 h1
@@ -52,12 +53,23 @@ ul,p
 	font-size: 43px;
 }
 
+.lfnyt
+{
+	font-family: "helvetica-light", serif;
+	color: white;
+	font-size: 43px;
+
+	padding-bottom: 10px;
+
+	text-align: center;
+}
+
 #time
 {
 	font-family: "helvetica-bold", sans-serif;
 	color: white;
 	font-size: 83px;
-	margin-top: -10px;
+	margin-top: 3px;
 }
 
 #main-weather-wrapper
@@ -67,7 +79,8 @@ ul,p
 	margin-top: 25px;
 
 	display: block;
-	background-color: #F3C662;
+	/*background-color: #F3C662;*/
+	transition: all 1s ease;
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
 }
@@ -78,7 +91,8 @@ ul,p
 	height: 65px;
 
 	display: block;
-	background-color: #E7BA56;
+	/*background-color: #E7BA56;*/
+	transition: all 1s ease;
 }
 
 #day-2
@@ -87,7 +101,9 @@ ul,p
 	height: 65px;
 
 	display: block;
-	background-color: #D7AA45;
+	/*background-color: #D7AA45;*/
+	transition: all 1s ease;
+
 }
 
 #day-3
@@ -96,7 +112,9 @@ ul,p
 	height: 65px;
 
 	display: block;
-	background-color: #C89C39;
+	/*background-color: #C89C39;*/
+	transition: all 1s ease;
+
 }
 
 #day-4
@@ -105,7 +123,8 @@ ul,p
 	height: 65px;
 
 	display: block;
-	background-color: #B18728;
+	/*background-color: #B18728;*/
+	transition: all 1s ease;
 }
 
 .date-wrapper
@@ -138,6 +157,39 @@ ul,p
 {
 	font-family: "helvetica-light", sans-serif;
 	text-align: center;
-	padding-top: 20px;
+	/*padding-top: 20px;*/
 	font-size: 32px;
+}
+
+.headline-container
+{
+	background-color: "green";
+	padding: 10px 20px 10px 20px;
+	margin: 0px;
+
+	text-align: justify;
+}
+
+.headline
+{
+	font-family: "helvetica-bold", sans-serif;
+	font-size: 18px;
+	color: white;
+
+	margin-top: 10px;
+
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+
+}
+
+.abstract
+{
+	display: inline;
+	font-family: "helvetica-light", sans-serif;
+	font-size: 16px;
+	height: 10px;
+
+	text-overflow: ellipsis;
 }
