@@ -39,8 +39,12 @@ function formatDate()
 
   if(date.getHours() > 12){
     hours -= 12;
-    ampm = "PM"
   }
+
+  if(date.getHours() >= 12){
+    ampm = "PM";
+  }
+
   if(min < 10)
     min = "0" + min;
   if(hours < 10)
@@ -76,7 +80,7 @@ function getMessage(temp){
 }
 
 function displayHeadlines(headlines){
-  console.log(headlines)
+  // console.log(headlines)
   for(var i = 0; i < 5; ++i){
     var html = '<div id="h-' + i + '" class="headline-container"><div class="headline">' + headlines[i].title + ':</div>';
         html += '<span class="abstract">' + headlines[i].abstract + '</span></div>';
