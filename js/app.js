@@ -77,11 +77,12 @@ function getMessage(temp){
 
 function displayHeadlines(headlines){
   console.log(headlines)
-  for(var i = 0; i < 6; ++i){
-    var html = '<div class="headline-container" style="background-color: ' + shadeColor(baseColor, -10 *i) + '"><div class="headline">' + headlines[i].title + ':</div>';
+  for(var i = 0; i < 5; ++i){
+    var html = '<div id="h-' + i + '" class="headline-container"><div class="headline">' + headlines[i].title + ':</div>';
         html += '<span class="abstract">' + headlines[i].abstract + '</span></div>';
 
     $('#news').append(html);
+    $('#h-' + i).css('background-color', shadeColor(baseColor, -10 * i));
   }
 }
 
@@ -89,13 +90,6 @@ $(document).ready(function() {
   navigator.geolocation.getCurrentPosition(function(position) {
     loadWeather(position.coords.latitude+','+position.coords.longitude); //load weather using your lat/lng coordinates
   });
-
-$.get( "http://api.nytimes.com/svc/news/v3/content/all/all/.json?api-key=bbdc38948928fe863bf9c70fb4b18d36%3A12%3A74943760", 
-function( data ) {
-  headlines = data.results;
-  displayHeadlines(headlines)
-});
-
 formatDate();
 
 });
@@ -106,16 +100,6 @@ function loadWeather(location, woeid) {
     woeid: woeid,
     unit: 'f',
     success: function(weather) {
-      // html = '<h2><i class="wi wi-yahoo-'+weather.code+'"></i> '+weather.temp+'&deg;</h2>';
-      // html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      // html += '<li class="currently">'+weather.currently+'</li>';
-      // html += '<li>'+weather.alt.temp+'&deg;C</li></ul>'; 
-
-      // for(var i = 0; i < 5; ++i) {
-      //        html += '<p>'+weather.forecast[i].date+': '+weather.forecast[i].high+ '/' + weather.forecast[i].low + '</p>';
-      //      }
-      // $('#location').append('<p>' + weather.city + ', ' + weather.region + '</p>');
-
       $(".weather-big").html('<i class="wi wi-yahoo-' + weather.code + '"></i>&nbsp' + weather.temp + '&deg');
       $(".message").html(getMessage(weather.temp));
       $("#location").html(weather.city + ', ' + weather.region );
@@ -132,6 +116,14 @@ function loadWeather(location, woeid) {
 
         // setTimeout(loadWeather(location, woeid), 6000);
       }
+
+      $.get("http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/1.json?api-key=a6fcc58d29d8425f287b0bc5e6b0d86c:14:74943760",
+      function( data ) {
+        console.log(data);
+        headlines = data.results;
+        displayHeadlines(headlines)
+      });
+
     },
     error: function(error) {
       $("#weather").html('<p>'+error+'</p>');
