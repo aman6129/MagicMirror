@@ -4,7 +4,7 @@ var baseColor = "#ff000";
 
 /* Does your browser support geolocation? */
 if ("geolocation" in navigator) {
-  $('.js-geolocation').show(); 
+  $('.js-geolocation').show();
 } else {
   $('.js-geolocation').hide();
 }
@@ -19,9 +19,9 @@ function shadeColor(color, percent) {
     G = parseInt(G * (100 + percent) / 100);
     B = parseInt(B * (100 + percent) / 100);
 
-    R = (R<255)?R:255;  
-    G = (G<255)?G:255;  
-    B = (B<255)?B:255;  
+    R = (R<255)?R:255;
+    G = (G<255)?G:255;
+    B = (B<255)?B:255;
 
     var RR = ((R.toString(16).length==1)?"0"+R.toString(16):R.toString(16));
     var GG = ((G.toString(16).length==1)?"0"+G.toString(16):G.toString(16));
@@ -99,8 +99,9 @@ formatDate();
 });
 
 function loadWeather(location, woeid) {
+  // console.log(location);
   $.simpleWeather({
-    location: location,
+    location: "30.618896300000003,-96.3386455",
     woeid: woeid,
     unit: 'f',
     success: function(weather) {
@@ -135,4 +136,3 @@ function loadWeather(location, woeid) {
     }
   });
 }
-
