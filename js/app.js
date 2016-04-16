@@ -82,7 +82,7 @@ function getMessage(temp){
 function displayHeadlines(headlines){
   // console.log(headlines)
   for(var i = 0; i < 5; ++i){
-    var html = '<div id="h-' + i + '" class="headline-container"><div class="headline">' + headlines[i].title + ':</div>';
+    var html = '<div id="h-' + i + '" class="headline-container"><div class="headline">' + headlines[i].title + '</div>';
         html += '<span class="abstract">' + headlines[i].abstract + '</span></div>';
 
     $('#news').append(html);
@@ -91,10 +91,11 @@ function displayHeadlines(headlines){
 }
 
 $(document).ready(function() {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    loadWeather(position.coords.latitude+','+position.coords.longitude); //load weather using your lat/lng coordinates
-  });
-formatDate();
+  // navigator.geolocation.getCurrentPosition(function(position) {
+  //   loadWeather(position.coords.latitude+','+position.coords.longitude); //load weather using your lat/lng coordinates
+  // });
+  loadWeather("30.618896300000003,-96.3386455");
+  formatDate();
 
 });
 

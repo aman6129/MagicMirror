@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'helvetica-light';
-  src: url('../font/HelveticaNeue-Light.otf') 
+  src: url('../font/HelveticaNeue-Light.otf')
 }
 
 @font-face {
@@ -20,7 +20,7 @@ html
 	margin: 30px 20px 30px 20px;
 	padding: 0px;
 
-	width: 1260px;
+	width: 1200px;
 	height: 770px;
 }
 
@@ -175,7 +175,7 @@ ul,p
 .headline
 {
 	font-family: "helvetica-bold", sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 	color: white;
 
 	margin-top: 7px;
@@ -190,7 +190,7 @@ ul,p
 {
 	display: inline;
 	font-family: "helvetica-light", sans-serif;
-	font-size: 16px;
+	font-size: 14px;
 	height: 10px;
 
 	text-overflow: ellipsis;
